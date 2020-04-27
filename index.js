@@ -16,6 +16,7 @@ for (const file of commandFiles) {
 }
 
 const cooldowns = new Discord.Collection();
+const prefix = process.env.prefixhero;
 
 client.once('ready', () => {
 	console.log('Ready!');
@@ -433,4 +434,4 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.login(token);
+client.login(process.env.token);
