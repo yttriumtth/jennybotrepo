@@ -156,7 +156,7 @@ client.on('message', message => {
 			})
 		}
 		
-		if (message.content.startsWith('>buddy')) {
+		if (message.content.startsWith('>buddy') || message.content.startsWith('>raine')) {
 			fs.readFile('./imagelists/buddy.txt', (err, data) => {
 			if (err) {
 				console.error(err)
