@@ -156,6 +156,21 @@ client.on('message', message => {
 			})
 		}
 		
+		if (message.content.startsWith('>buddy')) {
+			fs.readFile('./imagelists/buddy.txt', (err, data) => {
+			if (err) {
+				console.error(err)
+				return
+			}
+			linesGot = data.toString().split("\n");
+			var randInd = Math.floor(Math.random() * linesGot.length);
+			const imageEmbed = new Discord.RichEmbed()
+			.setColor('#0066ff')
+			.setImage(linesGot[randInd])
+			return message.channel.send(imageEmbed);
+			})
+		}
+		
 		if (message.content.startsWith('>aran')) {
 			fs.readFile('./imagelists/aran.txt', (err, data) => {
 			if (err) {
