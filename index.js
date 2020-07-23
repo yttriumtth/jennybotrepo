@@ -81,7 +81,7 @@ client.on('message', message => {
 	
 	if (!message.content.startsWith(prefix)) {
 		//All the > stuff below
-		if (message.content.startsWith('>neversoft') || message.content.startsWith('>headsosoft')) {
+		if (message.content.startsWith('>neversoft') || message.content.startsWith('>loli') || message.content.startsWith('>headsosoft')) {
 			fs.readFile('./imagelists/neversoft.txt', (err, data) => {
 			if (err) {
 				console.error(err)
@@ -187,7 +187,7 @@ client.on('message', message => {
 		}
 		
 		
-		if (message.content.startsWith('>eck') || message.content.startsWith('>egg') || message.content.startsWith('>egs') || message.content.startsWith('>ech') || message.content.startsWith('>ek') || message.content.startsWith('>tawz')) {
+		if (message.content.startsWith('>eck') || message.content.startsWith('>egg') || message.content.startsWith('>huevo') || message.content.startsWith('>egs') || message.content.startsWith('>ech') || message.content.startsWith('>ek') || message.content.startsWith('>tawz')) {
 			fs.readFile('./imagelists/eckse.txt', (err, data) => {
 			if (err) {
 				console.error(err)
@@ -217,7 +217,7 @@ client.on('message', message => {
 			})
 		}
 		
-		if (message.content.startsWith('>lol') || message.content.startsWith('>lmao')) {
+		if (message.content.startsWith('>laugh') || message.content.startsWith('>lmao')) {
 			fs.readFile('./imagelists/lol.txt', (err, data) => {
 			if (err) {
 				console.error(err)
