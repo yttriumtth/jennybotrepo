@@ -29,21 +29,39 @@ client.on('message', message => {
 		return;
 	}
 	
+	//test here
 	if (message.content.startsWith('%haiku')) {
 		
-		var contentFiv = fs.readFile('./textlists/haiku5.txt');
-		var contentSev = fs.readFile('./textlists/haiku7.txt');
-		var linesGotFiv = contentFiv.toString().split("\n");
-		var linesGotSev = contentSev.toString().split("\n");
-		var randInd = Math.floor(Math.random() * linesGotFiv.length);
-		var haikubeg = linesGotFiv[randInd];
-		var randInd = Math.floor(Math.random() * linesGotSev.length);
-		var haikumid = linesGotSev[randInd];
-		var randInd = Math.floor(Math.random() * linesGotFiv.length);
-		var haikuend = linesGotFiv[randInd];
-		
-		return message.channel.send(`${haikubeg}\n${haikumid}\n${haikuend}`);
+		fs.readFile('./textlists/haiku5.txt', (err, data) => {
+			if (err) {
+				console.error(err)
+				return
+			}
+			linesGot = data.toString().split("\n");
+			var randInd = Math.floor(Math.random() * linesGot.length);
+			await message.channel.send(linesGot[randInd]);
+		})
+		fs.readFile('./textlists/haiku7.txt', (err, data) => {
+			if (err) {
+				console.error(err)
+				return
+			}
+			linesGot = data.toString().split("\n");
+			var randInd = Math.floor(Math.random() * linesGot.length);
+			await message.channel.send(linesGot[randInd]);
+		})
+		fs.readFile('./textlists/haiku5.txt', (err, data) => {
+			if (err) {
+				console.error(err)
+				return
+			}
+			linesGot = data.toString().split("\n");
+			var randInd = Math.floor(Math.random() * linesGot.length);
+			await message.channel.send(linesGot[randInd]);
+			return
+		})
 	}
+	//test here
 	
 	
 	if (!message.content.startsWith(prefix)) {
