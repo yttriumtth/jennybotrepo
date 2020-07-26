@@ -22,7 +22,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.on('message', async (message) => {	
+client.on('message', message => {	
 	
 	if (message.author.bot)
 	{
@@ -39,7 +39,7 @@ client.on('message', async (message) => {
 			}
 			linesGot = data.toString().split("\n");
 			var randInd = Math.floor(Math.random() * linesGot.length);
-			await message.channel.send(linesGot[randInd]);
+			message.channel.send(linesGot[randInd]);
 		})
 		fs.readFile('./textlists/haiku7.txt', (err, data) => {
 			if (err) {
@@ -48,7 +48,7 @@ client.on('message', async (message) => {
 			}
 			linesGot = data.toString().split("\n");
 			var randInd = Math.floor(Math.random() * linesGot.length);
-			await message.channel.send(linesGot[randInd]);
+			message.channel.send(linesGot[randInd]);
 		})
 		fs.readFile('./textlists/haiku5.txt', (err, data) => {
 			if (err) {
@@ -57,7 +57,7 @@ client.on('message', async (message) => {
 			}
 			linesGot = data.toString().split("\n");
 			var randInd = Math.floor(Math.random() * linesGot.length);
-			await message.channel.send(linesGot[randInd]);
+			message.channel.send(linesGot[randInd]);
 			return;
 		})
 	}
