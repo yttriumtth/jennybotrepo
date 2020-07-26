@@ -30,20 +30,17 @@ client.on('message', message => {
 	}
 	
 	if (message.content.startsWith('%haiku')) {
-		var haikubeg = 'test1';
-		var haikumid = 'test2';
-		var haikuend = 'test3';
 		
 		var contentFiv = fs.readFile('./textlists/haiku5.txt');
 		var contentSev = fs.readFile('./textlists/haiku7.txt');
 		var linesGotFiv = contentFiv.toString().split("\n");
 		var linesGotSev = contentSev.toString().split("\n");
 		var randInd = Math.floor(Math.random() * linesGotFiv.length);
-		haikubeg = linesGotFiv[randInd];
-		randInd = Math.floor(Math.random() * linesGotSev.length);
-		haikumid = linesGotSev[randInd];
-		randInd = Math.floor(Math.random() * linesGotFiv.length);
-		haikuend = linesGotFiv[randInd];
+		var haikubeg = linesGotFiv[randInd];
+		var randInd = Math.floor(Math.random() * linesGotSev.length);
+		var haikumid = linesGotSev[randInd];
+		var randInd = Math.floor(Math.random() * linesGotFiv.length);
+		var haikuend = linesGotFiv[randInd];
 		
 		return message.channel.send(`${haikubeg}\n${haikumid}\n${haikuend}`);
 	}
