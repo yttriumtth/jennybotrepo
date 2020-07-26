@@ -28,7 +28,7 @@ client.on('message', message => {
 	{
 		return;
 	}
-	/*
+	
 	if (message.content.startsWith('%haiku')) {
 		var haikubeg = 'test1';
 		var haikumid = 'test2';
@@ -45,39 +45,9 @@ client.on('message', message => {
 		randInd = Math.floor(Math.random() * linesGotFiv.length);
 		haikuend = linesGotFiv[randInd];
 		
-		/*
-		fs.readFile('./textlists/haiku5.txt', (err, data) => {
-		if (err) {
-			console.error(err)
-			return
-		}
-		linesGot = data.toString().split("\n");
-		var randInd = Math.floor(Math.random() * linesGot.length);
-		var haikubeg = linesGot[randInd];
-		})
-		fs.readFile('./textlists/haiku7.txt', (err, data) => {
-		if (err) {
-			console.error(err)
-			return
-		}
-		linesGot = data.toString().split("\n");
-		var randInd = Math.floor(Math.random() * linesGot.length);
-		var haikumid = linesGot[randInd];
-		})
-		fs.readFile('./textlists/haiku5.txt', (err, data) => {
-		if (err) {
-			console.error(err)
-			return
-		}
-		linesGot = data.toString().split("\n");
-		var randInd = Math.floor(Math.random() * linesGot.length);
-		var haikuend = linesGot[randInd];
-		})
-		
-		
 		return message.channel.send(`${haikubeg}\n${haikumid}\n${haikuend}`);
 	}
-	*/
+	
 	
 	if (!message.content.startsWith(prefix)) {
 		//All the > stuff below
