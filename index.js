@@ -22,7 +22,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.on('message', message => {	
+client.on('message', async message => {	
 	
 	if (message.author.bot)
 	{
@@ -58,7 +58,7 @@ client.on('message', message => {
 			linesGot = data.toString().split("\n");
 			var randInd = Math.floor(Math.random() * linesGot.length);
 			await message.channel.send(linesGot[randInd]);
-			return
+			return;
 		})
 	}
 	//test here
