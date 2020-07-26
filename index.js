@@ -22,7 +22,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.on('message', async message => {	
+client.on('message', async (message) => {	
 	
 	if (message.author.bot)
 	{
