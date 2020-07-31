@@ -4,11 +4,7 @@ module.exports = {
 	args: false,
 	execute(message, args, admrole) {
 		if (admrole) {
-			message.channel.send('Restarting...').then(m => {
-				client.destroy().then(() => {
-					client.login('token');
-				});
-			});
+			client.destroy();
 		}
 	},
 };
