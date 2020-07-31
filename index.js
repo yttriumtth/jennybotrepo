@@ -28,56 +28,41 @@ client.on('message', message => {
 	{
 		return;
 	}
-	/*
+	
+	//test here
 	if (message.content.startsWith('%haiku')) {
-		var haikubeg = 'test1';
-		var haikumid = 'test2';
-		var haikuend = 'test3';
 		
-		var contentFiv = fs.readFile('./textlists/haiku5.txt');
-		var contentSev = fs.readFile('./textlists/haiku7.txt');
-		var linesGotFiv = contentFiv.toString().split("\n");
-		var linesGotSev = contentSev.toString().split("\n");
-		var randInd = Math.floor(Math.random() * linesGotFiv.length);
-		haikubeg = linesGotFiv[randInd];
-		randInd = Math.floor(Math.random() * linesGotSev.length);
-		haikumid = linesGotSev[randInd];
-		randInd = Math.floor(Math.random() * linesGotFiv.length);
-		haikuend = linesGotFiv[randInd];
-		
-		/*
 		fs.readFile('./textlists/haiku5.txt', (err, data) => {
-		if (err) {
-			console.error(err)
-			return
-		}
-		linesGot = data.toString().split("\n");
-		var randInd = Math.floor(Math.random() * linesGot.length);
-		var haikubeg = linesGot[randInd];
+			if (err) {
+				console.error(err)
+				return
+			}
+			linesGot = data.toString().split("\n");
+			var randInd = Math.floor(Math.random() * linesGot.length);
+			message.channel.send(linesGot[randInd]);
 		})
 		fs.readFile('./textlists/haiku7.txt', (err, data) => {
-		if (err) {
-			console.error(err)
-			return
-		}
-		linesGot = data.toString().split("\n");
-		var randInd = Math.floor(Math.random() * linesGot.length);
-		var haikumid = linesGot[randInd];
+			if (err) {
+				console.error(err)
+				return
+			}
+			linesGot = data.toString().split("\n");
+			var randInd = Math.floor(Math.random() * linesGot.length);
+			message.channel.send(linesGot[randInd]);
 		})
 		fs.readFile('./textlists/haiku5.txt', (err, data) => {
-		if (err) {
-			console.error(err)
-			return
-		}
-		linesGot = data.toString().split("\n");
-		var randInd = Math.floor(Math.random() * linesGot.length);
-		var haikuend = linesGot[randInd];
+			if (err) {
+				console.error(err)
+				return
+			}
+			linesGot = data.toString().split("\n");
+			var randInd = Math.floor(Math.random() * linesGot.length);
+			message.channel.send(linesGot[randInd]);
+			return;
 		})
-		
-		
-		return message.channel.send(`${haikubeg}\n${haikumid}\n${haikuend}`);
 	}
-	*/
+	//test here
+	
 	
 	if (!message.content.startsWith(prefix)) {
 		//All the > stuff below
