@@ -4,6 +4,7 @@ module.exports = {
 	execute(message, args) {
 		const imagelist = './imagelists/neversoft.txt'; //location of images
 		const framecolor = '#0066ff'; //personalized frame color
+		const fs = require('fs');
 		fs.readFile(imagelist, (err, data) => {
 			if (err) {
 				console.error(err)
