@@ -98,6 +98,9 @@ client.on('message', message => {
 		const args = message.content.slice(prefix.length).split(/ +/);
 		const commandName = args.shift().toLowerCase();
 		
+		//is user a Jennymaster?
+		const admrole = message.member.roles.has('738728289233010708');
+		
 		//search for relevant command
 		const command = client.fucommands.get(commandName)
 			|| client.fucommands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
@@ -112,7 +115,7 @@ client.on('message', message => {
 
 		//Execute command
 		try {
-			command.execute(message, args);
+			command.execute(message, args, admrole);
 		} catch (error) {
 			console.error(error);
 			message.reply('There was an error trying to execute that command!');
