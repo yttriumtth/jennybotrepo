@@ -1,7 +1,9 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client();
-client.commands = new Discord.Collection();
+client.fucommands = new Discord.Collection();
+client.rpcommands = new Discord.Collection();
+client.gtcommands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 const prefix = process.env.prefixhero; //adds the prefix from Heroku
 
