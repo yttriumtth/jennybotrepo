@@ -5,15 +5,24 @@ client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 const prefix = process.env.prefixhero; //adds the prefix from Heroku
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const functioncommandFiles = fs.readdirSync('./_functioncommands').filter(file => file.endsWith('.js'));
+const roleplaycommandFiles = fs.readdirSync('./_roleplaycommands').filter(file => file.endsWith('.js'));
+const greentextcommandFiles = fs.readdirSync('./_greentextcommands').filter(file => file.endsWith('.js'));
 
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-
-	// set a new item in the Collection
-	// with the key as the command name and the value as the exported module
-	client.commands.set(command.name, command);
+//commands setup
+for (const file of functioncommandFiles) {
+	const fucommand = require(`./_functioncommands/${file}`);
+	client.fucommands.set(fucommand.name, fucommand);
 }
+for (const file of roleplaycommandFiles) {
+	const rpcommand = require(`./_roleplaycommands/${file}`);
+	client.rpcommands.set(rpcommand.name, rpcommand);
+}
+for (const file of greentextcommandFiles) {
+	const gtcommand = require(`./_greentextcommands/${file}`);
+	client.gtcommands.set(gtcommand.name, gtcommand);
+}
+//commands setup
 
 
 client.once('ready', () => {
@@ -22,68 +31,95 @@ client.once('ready', () => {
 
 client.on('message', message => {	
 	
-	if (message.author.bot)
+	if (message.author.bot || message.channel.type !== 'text')
 	{
-		return; //bots must not interact
+		return; //no bots or PMs
 	}
 	
-	//greentext commands (Reactions)
+	
+	if (!message.member.roles.has('738728289233010708') && !message.member.roles.has('738728406052765696'))
+	{
+		return; //Must have required roles (Jennyfriend or Jennymaster)
+	}
+	
+	
+	//reaction commands =>
 	if (message.content.startsWith('>')) {
-		
-	}
-	
-	//dot commands (Roleplays)
-	if (message.content.startsWith('.')) {
-		
-	}
-	
-	//regular commands (Functions)
-	if (message.content.startsWith(prefix)) {
-
+		//parse and prepare the text
 		const args = message.content.slice(prefix.length).split(/ +/);
 		const commandName = args.shift().toLowerCase();
-		const command = client.commands.get(commandName)
-			|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-		if (!command) return;
-		if (!message.member.roles.has(command.reqRole)) {
-			return message.reply('You do not have permission to do this command.');
-		}
-		if (command.guildOnly && message.channel.type !== 'text') {
-			return message.reply('I can\'t execute that command inside DMs!');
-		}
-		if (command.args && !args.length) {
-			return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-			let reply = `You didn't provide any arguments, ${message.author}!`;
-
-			if (command.usage) {
-				reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
-			}
-
-			return message.channel.send(reply);
-		}
-		if (!cooldowns.has(command.name)) {
-			cooldowns.set(command.name, new Discord.Collection());
-		}
-		const now = Date.now();
-		const timestamps = cooldowns.get(command.name);
-		const cooldownAmount = (command.cooldown || 3) * 1000;
-		if (timestamps.has(message.author.id)) {
-			const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
-
-			if (now < expirationTime) {
-				const timeLeft = (expirationTime - now) / 1000;
-				return message.reply(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
-			}
+		
+		//search for relevant command
+		const command = client.gtcommands.get(commandName)
+			|| client.gtcommands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+		if (!command) {
+			return;
 		}
 
+		//Execute command
 		try {
 			command.execute(message, args);
 		} catch (error) {
 			console.error(error);
-			message.reply('there was an error trying to execute that command!');
+			message.reply('There was an error trying to execute that command!');
 		}
-				
 	}
+	
+	//roleplay commands =>
+	if (message.content.startsWith('.')) {
+		//parse and prepare the text
+		const args = message.content.slice(prefix.length).split(/ +/);
+		const commandName = args.shift().toLowerCase();
+		
+		//search for relevant command
+		const command = client.rpcommands.get(commandName)
+			|| client.rpcommands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+		if (!command) {
+			return;
+		}
+		
+		//If command needs extra arguments, stahp
+		if (command.args && !args.length) {
+			return message.channel.send(`You didn't provide enough data for Jenny to do that, ${message.author}!`);
+		}
+
+		//Execute command
+		try {
+			command.execute(message, args);
+		} catch (error) {
+			console.error(error);
+			message.reply('There was an error trying to execute that command!');
+		}
+	}
+	
+	//function commands =>
+	if (message.content.startsWith(prefix)) {
+		//parse and prepare the text
+		const args = message.content.slice(prefix.length).split(/ +/);
+		const commandName = args.shift().toLowerCase();
+		
+		//search for relevant command
+		const command = client.fucommands.get(commandName)
+			|| client.fucommands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+		if (!command) {
+			return message.channel.send(`That is not something Jenny can do.`);
+		}
+		
+		//If command needs extra arguments, stahp
+		if (command.args && !args.length) {
+			return message.channel.send(`You didn't provide enough data for Jenny to do that, ${message.author}!`);
+		}
+
+		//Execute command
+		try {
+			command.execute(message, args);
+		} catch (error) {
+			console.error(error);
+			message.reply('There was an error trying to execute that command!');
+		}
+	}
+	
+	return;
 	
 });
 
@@ -97,4 +133,4 @@ client.on("reconnecting", function(){
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
-client.login(process.env.token);
+client.login(process.env.token); //adds the token in Heroku
