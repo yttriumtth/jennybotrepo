@@ -31,6 +31,5 @@ module.exports = {
 			var randInd = Math.floor(Math.random() * linesGot.length);
 			message.channel.send(linesGot[randInd]);
 		})		
-		}
 	},
 };
