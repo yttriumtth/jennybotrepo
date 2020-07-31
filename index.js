@@ -44,7 +44,6 @@ client.on('message', message => {
 		return; //Must have required roles (Jennyfriend or Jennymaster)
 	}
 	
-	
 	//reaction commands =>
 	if (message.content.startsWith('>')) {
 		//parse and prepare the text
