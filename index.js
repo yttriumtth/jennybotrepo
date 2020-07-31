@@ -1,15 +1,18 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const prefix = process.env.prefixhero; //adds the prefix from Heroku
 client.fucommands = new Discord.Collection();
 client.rpcommands = new Discord.Collection();
 client.gtcommands = new Discord.Collection();
-const cooldowns = new Discord.Collection();
-const prefix = process.env.prefixhero; //adds the prefix from Heroku
 
 const functioncommandFiles = fs.readdirSync('./_functioncommands').filter(file => file.endsWith('.js'));
 const roleplaycommandFiles = fs.readdirSync('./_roleplaycommands').filter(file => file.endsWith('.js'));
 const greentextcommandFiles = fs.readdirSync('./_greentextcommands').filter(file => file.endsWith('.js'));
+
+var talkChanceCommon = 170;
+var talkChanceRare = 500;
+var talkChanceEmoji = 60;
 
 //commands setup
 for (const file of functioncommandFiles) {
@@ -33,15 +36,9 @@ client.once('ready', () => {
 
 client.on('message', message => {	
 	
-	if (message.author.bot || message.channel.type !== 'text')
-	{
-		return; //no bots or PMs
-	}
-	
-	
-	if (!message.member.roles.has('738728289233010708') && !message.member.roles.has('738728406052765696'))
-	{
-		return; //Must have required roles (Jennyfriend or Jennymaster)
+	//User filter - no bots or PMs, and must have required roles (Jennyfriend or Jennymaster)
+	if ((!message.member.roles.has('738728289233010708') && !message.member.roles.has('738728406052765696')) || message.author.bot || message.channel.type !== 'text') {
+		return;
 	}
 	
 	//reaction commands =>
@@ -123,11 +120,44 @@ client.on('message', message => {
 		}
 	}
 	
+	//Jenny AI
+	var randChance = Math.floor(Math.random() * Math.floor(talkChanceRare));
+	if (randChance == talkChanceRare) {
+		var msgStr = message.content.toUpperCase();
+		return message.channel.send('You should write a book! People need to know about the `' + msgStr + '`');
+	} else {
+		var randChance = Math.floor(Math.random() * Math.floor(talkChanceCommon));
+		if (randChance == talkChanceCommon) {
+			fs.readFile('./textlists/randtalk.txt', (err, data) => {
+			if (err) {
+				console.error(err)
+				return
+			}
+			linesGot = data.toString().split("\n");
+			var randInd = Math.floor(Math.random() * linesGot.length);
+			return message.channel.send(linesGot[randInd]);
+			})
+		} else {
+			var randChance = Math.floor(Math.random() * Math.floor(talkChanceEmoji));
+			if (randChance == talkChanceEmoji) {
+				fs.readFile('./textlists/randreact.txt', (err, data) => {
+				if (err) {
+					console.error(err)
+					return
+				}
+				linesGot = data.toString().split("\n");
+				var randInd = Math.floor(Math.random() * linesGot.length);
+				return message.react(linesGot[randInd]);
+				})
+			}
+		}
+	}
+
 	return;
-	
+
 });
 
-//overhead =>
+//client stuff =>
 client.on('error', error => {
 	 console.error('The websocket connection encountered an error:', error);
 });
