@@ -10,9 +10,9 @@ const functioncommandFiles = fs.readdirSync('./_functioncommands').filter(file =
 const roleplaycommandFiles = fs.readdirSync('./_roleplaycommands').filter(file => file.endsWith('.js'));
 const greentextcommandFiles = fs.readdirSync('./_greentextcommands').filter(file => file.endsWith('.js'));
 
-var talkChanceCommon = 170;
-var talkChanceRare = 500;
-var talkChanceEmoji = 60;
+var talkChanceCommon = 10; //normal 170
+var talkChanceRare = 10; //normal 500
+var talkChanceEmoji = 2; //normal 60
 
 //commands setup
 for (const file of functioncommandFiles) {
@@ -120,6 +120,8 @@ client.on('message', message => {
 		}
 	}
 	
+	//maintenance commands =>
+	
 	//Jenny AI
 	var randChance = Math.floor(Math.random() * Math.floor(talkChanceRare));
 	if (randChance == talkChanceRare) {
@@ -151,10 +153,6 @@ client.on('message', message => {
 				})
 			}
 		}
-	}
-	
-	if (message.content.startsWith('&')) {
-			return message.channel.send(`${talkChanceCommon} ${talkChanceRare} ${talkChanceEmoji}`);
 	}
 
 	return;
