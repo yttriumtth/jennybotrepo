@@ -1,7 +1,7 @@
 {
   "name": "jenny",
-  "version": "1.0.5",
-  "description": "lol",
+  "version": "0.21",
+  "description": "Jenny is a shitpost bot designed to do random functions not found in other Discord bots. Namely shitposting functions.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
