@@ -1,12 +1,17 @@
 module.exports = {
-	name: 'gm',
-	description: 'Posts the Gibe Money command',
+	name: 'setfreq',
+	description: 'Edits Jennytalk',
 	args: true,
 	execute(message, args, admrole) {
 		if (admrole) {
-			const usNam = args[0];
-			const amount = args[1];
-			message.channel.send(`e!add-money ${usNam} ${amount}`);
+			if (isNaN(args[0]) || isNaN(args[1]) || isNaN(args[2])) {
+				return message.channel.send(`Please use actual numbers.`);
+			} else {
+				var talkChanceCommon = args[0];
+				var talkChanceRare = args[1];
+				var talkChanceEmoji = args[2];
+				message.channel.send(`Jennytalk frequency has been altered: Common: ${talkChanceCommon}, Rare: ${talkChanceRare}, Emoji: ${talkChanceEmoji}`);
+			}
 		}
 	},
 };
