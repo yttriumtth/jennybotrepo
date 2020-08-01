@@ -152,6 +152,10 @@ client.on('message', message => {
 			}
 		}
 	}
+	
+	if (message.content.startsWith('&')) {
+			return message.channel.send(`${talkChanceCommon} ${talkChanceRare} ${talkChanceEmoji}`);
+	}
 
 	return;
 
