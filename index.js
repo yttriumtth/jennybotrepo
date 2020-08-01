@@ -124,14 +124,12 @@ client.on('message', message => {
 	
 	//Jenny AI
 	var randChance = Math.floor(Math.random() * Math.floor(talkChanceRare));
-	message.channel.send(`Tested RareRandChance ${randChance}`);
-	if (randChance == talkChanceRare) {
+	if (randChance == talkChanceRare-1) {
 		var msgStr = message.content.toUpperCase();
 		return message.channel.send('You should write a book! People need to know about the `' + msgStr + '`');
 	} else {
 		var randChance = Math.floor(Math.random() * Math.floor(talkChanceCommon));
-		message.channel.send(`Tested CommonRandChance ${randChance}`);
-		if (randChance == talkChanceCommon) {
+		if (randChance == talkChanceCommon-1) {
 			fs.readFile('./textlists/randtalk.txt', (err, data) => {
 			if (err) {
 				console.error(err)
@@ -143,8 +141,7 @@ client.on('message', message => {
 			})
 		} else {
 			var randChance = Math.floor(Math.random() * Math.floor(talkChanceEmoji));
-			message.channel.send(`Tested EmojiRandChance ${randChance}`);
-			if (randChance == talkChanceEmoji) {
+			if (randChance == talkChanceEmoji-1) {
 				fs.readFile('./textlists/randreact.txt', (err, data) => {
 				if (err) {
 					console.error(err)
