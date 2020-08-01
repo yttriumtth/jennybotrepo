@@ -1,6 +1,6 @@
 {
   "name": "jenny",
-  "version": "0.21",
+  "version": "1.0.0",
   "description": "Jenny is a shitpost bot designed to do random functions not found in other Discord bots. Namely shitposting functions.",
   "main": "index.js",
   "scripts": {
