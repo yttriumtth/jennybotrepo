@@ -10,6 +10,10 @@ const functioncommandFiles = fs.readdirSync('./_functioncommands').filter(file =
 const roleplaycommandFiles = fs.readdirSync('./_roleplaycommands').filter(file => file.endsWith('.js'));
 const greentextcommandFiles = fs.readdirSync('./_greentextcommands').filter(file => file.endsWith('.js'));
 
+var talkChanceCommon = 170; //normal 170
+var talkChanceRare = 500; //normal 500
+var talkChanceEmoji = 60; //normal 60
+
 //commands setup
 for (const file of functioncommandFiles) {
 	const fucommand = require(`./_functioncommands/${file}`);
@@ -115,10 +119,6 @@ client.on('message', message => {
 			message.reply('There was an error trying to execute that command!');
 		}
 	}
-	
-	var talkChanceCommon = 170; //normal 170
-	var talkChanceRare = 500; //normal 500
-	var talkChanceEmoji = 60; //normal 60
 	
 	//Maintenance commands =>
 	if (message.member.roles.has('738728289233010708')) {
