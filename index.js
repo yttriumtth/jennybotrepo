@@ -10,10 +10,6 @@ const functioncommandFiles = fs.readdirSync('./_functioncommands').filter(file =
 const roleplaycommandFiles = fs.readdirSync('./_roleplaycommands').filter(file => file.endsWith('.js'));
 const greentextcommandFiles = fs.readdirSync('./_greentextcommands').filter(file => file.endsWith('.js'));
 
-var talkChanceCommon = 170; //normal 170
-var talkChanceRare = 500; //normal 500
-var talkChanceEmoji = 60; //normal 60
-
 //commands setup
 for (const file of functioncommandFiles) {
 	const fucommand = require(`./_functioncommands/${file}`);
@@ -120,21 +116,25 @@ client.on('message', message => {
 		}
 	}
 	
+	var talkChanceCommon = 170; //normal 170
+	var talkChanceRare = 500; //normal 500
+	var talkChanceEmoji = 60; //normal 60
+	
 	//Maintenance commands =>
 	if (message.member.roles.has('738728289233010708')) {
 		if (message.content.startsWith('<')) {
 			const args = message.content.slice(prefix.length).split(/ +/);
 			const commandName = args.shift().toLowerCase();
 			if (commandName == 'changerarefreq') {
-				var talkChanceRare = args[0];
+				talkChanceRare = args[0];
 				return message.channel.send(`The chance of sending a rare message has been changed to 1 in ${talkChanceRare}.`);
 			}
 			if (commandName == 'changecommonfreq') {
-				var talkChanceCommon = args[0];
+				talkChanceCommon = args[0];
 				return message.channel.send(`The chance of sending a common message has been changed to 1 in ${talkChanceCommon}.`);
 			}
 			if (commandName == 'changeemojifreq') {
-				var talkChanceEmoji = args[0];
+				talkChanceEmoji = args[0];
 				return message.channel.send(`The chance of sending a emoji reaction has been changed to 1 in ${talkChanceEmoji}.`);
 			}
 			if (commandName == 'showfreq') {
