@@ -120,7 +120,14 @@ client.on('message', message => {
 		}
 	}
 	
-	//maintenance commands =>
+	//Maintenance commands =>
+	if (message.member.roles.has('738728289233010708')) {
+		if (message.content.startsWith('<')) {
+			const args = message.content.slice(prefix.length).split(/ +/);
+			const commandName = args.shift().toLowerCase();
+			return message.channel.send(`${args}, and ${commandName}`);		
+		}
+	}
 	
 	//Jenny AI
 	var randChance = Math.floor(Math.random() * Math.floor(talkChanceRare));
