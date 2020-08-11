@@ -138,7 +138,7 @@ client.on('message', message => {
 				return message.channel.send(`The chance of sending a emoji reaction has been changed to 1 in ${talkChanceEmoji}.`);
 			}
 			if (commandName == 'showfreq') {
-				return message.channel.send(`Common: ${talkChanceCommon}, Rare: ${talkChanceRare}, Emoji: ${talkChanceEmoji}.`);
+				return message.channel.send('Common: ' + talkChanceCommon + ', Rare: ' + talkChanceRare + ', Emoji: ' + talkChanceEmoji + '.');
 			}
 		}
 	}
