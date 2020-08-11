@@ -126,15 +126,15 @@ client.on('message', message => {
 			const args = message.content.slice(prefix.length).split(/ +/);
 			const commandName = args.shift().toLowerCase();
 			if (commandName == 'changerarefreq') {
-				var talkChanceRare = args(0);
+				var talkChanceRare = args[0];
 				return message.channel.send(`The chance of sending a rare message has been changed to 1 in ${talkChanceRare}.`);
 			}
 			if (commandName == 'changecommonfreq') {
-				var talkChanceCommon = args(0);
+				var talkChanceCommon = args[0];
 				return message.channel.send(`The chance of sending a common message has been changed to 1 in ${talkChanceCommon}.`);
 			}
 			if (commandName == 'changeemojifreq') {
-				var talkChanceEmoji = args(0);
+				var talkChanceEmoji = args[0];
 				return message.channel.send(`The chance of sending a emoji reaction has been changed to 1 in ${talkChanceEmoji}.`);
 			}
 			if (commandName == 'showfreq') {
