@@ -11,7 +11,7 @@ const roleplaycommandFiles = fs.readdirSync('./_roleplaycommands').filter(file =
 const greentextcommandFiles = fs.readdirSync('./_greentextcommands').filter(file => file.endsWith('.js'));
 
 var talkChanceCommon = 170; //normal 170
-var talkChanceRare = 1000; //normal 500
+var talkChanceRare = 1000; //normal 1000
 var talkChanceEmoji = 60; //normal 60
 
 //commands setup
@@ -120,7 +120,7 @@ client.on('message', message => {
 		}
 	}
 	
-	//Maintenance commands =>
+	//Maintenance commands, they aren't external since they're required to modify variables in this scope =>
 	if (message.member.roles.has('738728289233010708')) {
 		if (message.content.startsWith('<')) {
 			const args = message.content.slice(prefix.length).split(/ +/);
