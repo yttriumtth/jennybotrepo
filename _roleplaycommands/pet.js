@@ -7,7 +7,29 @@ module.exports = {
 		const fs = require('fs');
 		const Discord = require('discord.js');
 		if (!message.mentions.users.size) {
-			return message.reply('Can you tag a user for Jenny?'); //optional
+			fs.readFile('./textlists/pet.txt', (err, data) => {
+				if (err) {
+					console.error(err)
+					return
+				}
+				linesGot = data.toString().split("\n");
+				var randInd = Math.floor(Math.random() * linesGot.length);
+				const randLine = linesGot[randInd];
+				const taggedUser = message.mentions.users.first();
+				message.channel.send(`${message.author.username} has pet` args[0] + randLine);
+			})
+			fs.readFile(imagelist, (err, data) => {
+				if (err) {
+					console.error(err)
+					return
+				}
+				linesGot = data.toString().split("\n");
+				var randInd = Math.floor(Math.random() * linesGot.length);
+				const imageEmbed = new Discord.RichEmbed()
+				.setColor(framecolor)
+				.setImage(linesGot[randInd])
+				return message.channel.send(imageEmbed);
+			})			
 		}
 			fs.readFile('./textlists/pet.txt', (err, data) => {
 				if (err) {
