@@ -16,7 +16,7 @@ module.exports = {
 				var randInd = Math.floor(Math.random() * linesGot.length);
 				const randLine = linesGot[randInd];
 				const taggedUser = message.mentions.users.first();
-				message.channel.send(`${message.author.username} has pet` + args[0] + randLine);
+				message.channel.send(`${message.author.username} has pet ` + args[0] + randLine);
 			})
 			fs.readFile(imagelist, (err, data) => {
 				if (err) {
@@ -40,7 +40,7 @@ module.exports = {
 				var randInd = Math.floor(Math.random() * linesGot.length);
 				const randLine = linesGot[randInd];
 				const taggedUser = message.mentions.users.first();
-				message.channel.send(`${message.author.username} has pet ${taggedUser} `+randLine);
+				message.channel.send(`${message.author.username} has pet ${taggedUser}`+randLine);
 			})
 			fs.readFile(imagelist, (err, data) => {
 				if (err) {
