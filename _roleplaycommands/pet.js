@@ -30,7 +30,7 @@ module.exports = {
 				.setImage(linesGot[randInd])
 				return message.channel.send(imageEmbed);
 			})			
-		}
+		} else {
 			fs.readFile('./textlists/pet.txt', (err, data) => {
 				if (err) {
 					console.error(err)
@@ -54,5 +54,6 @@ module.exports = {
 				.setImage(linesGot[randInd])
 				return message.channel.send(imageEmbed);
 			})
+		}
 	},
 };
