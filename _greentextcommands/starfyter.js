@@ -3,7 +3,7 @@ module.exports = {
 	aliases: ['star', 'starfighter'],
 	execute(message, args) {
 		const imagelist = './imagelists/starfyter.txt'; //location of images
-		const framecolor = '#c375ff'; //personalized frame color
+		const framecolor = '#FF8C00'; //personalized frame color
 		const fs = require('fs');
 		const Discord = require('discord.js');
 		fs.readFile(imagelist, (err, data) => {
