@@ -3,7 +3,7 @@ module.exports = {
 	aliases: ['dag', 'monday'],
 	execute(message, args) {
 		const imagelist = './imagelists/mandag.txt'; //location of images
-		const framecolor = '#000000'; //personalized frame color
+		const framecolor = '#0000ff'; //personalized frame color
 		const fs = require('fs');
 		const Discord = require('discord.js');
 		fs.readFile(imagelist, (err, data) => {
