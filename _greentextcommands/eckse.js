@@ -2,7 +2,7 @@ module.exports = {
 	name: 'eckse',
 	aliases: ['eggs', 'echse', 'echsi', 'eggse', 'huevo', 'eks', 'ecks', 'tawz', 'eckseshit'],
 	execute(message, args) {
-		const imagelist = './imagelists/neckse.txt'; //location of images
+		const imagelist = './imagelists/eckse.txt'; //location of images
 		const framecolor = '#ff00ff'; //personalized frame color
 		const fs = require('fs');
 		const Discord = require('discord.js');
