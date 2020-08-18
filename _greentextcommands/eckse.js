@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'eckse',
-	aliases: ['eggs', 'echse', 'echsi', 'eggse', 'huevo', 'eks', 'ecks', 'tawz', 'eckseshit'],
+	aliases: ['eggs', 'echse', 'echsi', 'eggse', 'huevo', 'eks', 'ecks', 'tawz', 'eckseshit', 'eg', 'egg', 'egs'],
 	execute(message, args) {
 		const imagelist = './imagelists/eckse.txt'; //location of images
 		const framecolor = '#ff00ff'; //personalized frame color
