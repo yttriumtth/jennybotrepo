@@ -8,6 +8,7 @@ module.exports = {
 		const helpEmbed = new Discord.RichEmbed()
 		.setColor('#ff0040')
 		.setTitle('Jenny')
+		.setURL('https://github.com/yttriumtth/jennybotrepo')
 		.setAuthor('The Friend Society', 'https://cdn.discordapp.com/icons/212320806473039873/a_66402aa927dbb05de9af61340536cf1b.webp', 'http://takethehint.net/')
 		.setDescription('Discord Shitpost Bot')
 		.setThumbnail('https://cdn.discordapp.com/attachments/535406784085622793/745739489267155124/canvas2.png')
