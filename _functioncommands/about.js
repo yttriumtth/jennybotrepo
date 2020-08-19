@@ -8,18 +8,14 @@ module.exports = {
 		const helpEmbed = new Discord.RichEmbed()
 		.setColor('#ff0040')
 		.setTitle('Jenny')
-		.setAuthor('Jenny', 'https://cdn.discordapp.com/attachments/535406784085622793/745739489267155124/canvas2.png', 'http://takethehint.net/')
+		.setAuthor('The Friend Society', 'https://cdn.discordapp.com/icons/212320806473039873/a_66402aa927dbb05de9af61340536cf1b.webp', 'http://takethehint.net/')
 		.setDescription('Discord Shitpost Bot')
 		.setThumbnail('https://cdn.discordapp.com/attachments/535406784085622793/745739489267155124/canvas2.png')
-		//.addFields(
-		//	{ name: 'Why?', value: 'becuz' },
-		//	{ name: '\u200B', value: '\u200B' },
-		//	{ name: '1', value: 'Some value here', inline: true },
-		//	{ name: '2', value: 'Some value here', inline: true },
-		//)
-		//.addField('3', 'Some value here', true)
+		.addField('Functions (%)', 'about, haiku, ping', true)
+		.addField('Macros (>)', 'aran, buddy, cozy, dab, eckse, faf, furry, id, jenny, laugh, leoian, mandag, marry, neon, neversoft, starfyter, vivi, waismuth, wrong', true)
+		.addField('Roleplay (.)', 'pet, suicide', true)
 		.setTimestamp()
-		.setFooter('To be molestedd', 'https://cdn.discordapp.com/icons/212320806473039873/a_66402aa927dbb05de9af61340536cf1b.webp');
+		.setFooter('If you know her wherabouts, there is a 500,000,000 spaceshekel bounty. Contact your local space starbucks for more details.');
 		return message.channel.send(helpEmbed);
 	},
 };
