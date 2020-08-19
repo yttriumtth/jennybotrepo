@@ -6,7 +6,7 @@ module.exports = {
 	execute(message, args, admrole) {
 		const Discord = require('discord.js');
 		const imageEmbed = new Discord.RichEmbed()
-		.setColor(framecolor)
+		.setColor('#ff0040')
 		.setTitle('Jenny')
 		.setAuthor('Jenny', 'https://cdn.discordapp.com/attachments/535406784085622793/745739489267155124/canvas2.png', 'http://takethehint.net/')
 		.setDescription('Discord Shitpost Bot')
