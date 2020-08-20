@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'starfyter',
-	aliases: ['star', 'starfighter'],
+	aliases: ['star', 'starfighter', 'milk', 'milky', 'starfy'],
 	execute(message, args) {
 		const imagelist = './imagelists/starfyter.txt'; //location of images
 		const framecolor = '#df663c'; //personalized frame color

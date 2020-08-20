@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'vivi',
-	aliases: ['viv', 'fops'],
+	aliases: ['viv', 'fops', 'fox'],
 	execute(message, args) {
 		const imagelist = './imagelists/vivi.txt'; //location of images
 		const framecolor = '#c375ff'; //personalized frame color
