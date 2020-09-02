@@ -4,32 +4,32 @@ module.exports = {
 	args: false,
 	execute(message, args, admrole) {
 		const fs = require('fs');
-		fs.readFile('./textlists/haiku5.txt', (err, data) => {
+		fs.readFile('./textlists/haiku5.txt', async (err, data) => {
 			if (err) {
 				console.error(err)
 				return
 			}
 			linesGot = data.toString().split("\n");
 			var randInd = Math.floor(Math.random() * linesGot.length);
-			message.channel.send(linesGot[randInd]);
+			await message.channel.send(linesGot[randInd]);
 		})
-		fs.readFile('./textlists/haiku7.txt', (err, data) => {
+		fs.readFile('./textlists/haiku7.txt', async (err, data) => {
 			if (err) {
 				console.error(err)
 				return
 			}
 			linesGot = data.toString().split("\n");
 			var randInd = Math.floor(Math.random() * linesGot.length);
-			message.channel.send(linesGot[randInd]);
+			await message.channel.send(linesGot[randInd]);
 		})
-		fs.readFile('./textlists/haiku5.txt', (err, data) => {
+		fs.readFile('./textlists/haiku5.txt', async (err, data) => {
 			if (err) {
 				console.error(err)
 				return
 			}
 			linesGot = data.toString().split("\n");
 			var randInd = Math.floor(Math.random() * linesGot.length);
-			message.channel.send(linesGot[randInd]);
+			await message.channel.send(linesGot[randInd]);
 		})		
 	},
 };
