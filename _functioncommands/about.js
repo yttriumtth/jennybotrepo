@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'about',
 	description: 'Who is Jenny',
-		aliases: ['jenny', 'help', 'halp'],
+		aliases: ['jenny'],
 	args: false,
 	execute(message, args, admrole) {
 		const Discord = require('discord.js');

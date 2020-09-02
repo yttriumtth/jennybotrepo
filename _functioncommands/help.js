@@ -1,7 +1,7 @@
 module.exports = {
-	name: 'ping',
-	description: 'Ping!',
-	aliases: ['alive', 'test'],
+	name: 'help',
+	description: 'Helping',
+	aliases: ['halp'],
 	args: false,
 	execute(message, args, admrole) {
 		if (!args[0]) {
