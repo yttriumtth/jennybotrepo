@@ -1,0 +1,13 @@
+module.exports = {
+	name: 'ping',
+	description: 'Ping!',
+	aliases: ['alive', 'test'],
+	args: false,
+	execute(message, args, admrole) {
+		if (!args[0]) {
+			message.channel.send('You did not provide a command for which to get help on. The correct syntax is: %help [command name].');
+		} else {
+			message.channel.send('why you asking me for? ask a mod how that works');
+		}
+	},
+};
