@@ -3,7 +3,7 @@ module.exports = {
 	aliases: ['jen', 'jenn'],
 	execute(message, args) {
 		const imagelist = './imagelists/jenny.txt'; //location of images
-		const framecolor = '#0066ff'; //personalized frame color
+		const framecolor = '#ff0040'; //personalized frame color
 		const fs = require('fs');
 		const Discord = require('discord.js');
 		fs.readFile(imagelist, (err, data) => {
