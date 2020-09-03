@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'weary',
 	description: 'Rest now',
-	aliases: ['tired', 'bonfire'],
+	aliases: ['tired', 'bonfire', 'mood'],
 	args: false,
 	execute(message, args, admrole) {
 		const Discord = require('discord.js');
