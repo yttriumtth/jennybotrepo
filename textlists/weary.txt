@@ -1,2 +1,4 @@
+-
 ./misc/stagger.mp3
-You seem tired; Come, rest here for a while
+You seem tired; Come, rest here for a while.
+We're almost there; Let's rest for a bit. Okay?

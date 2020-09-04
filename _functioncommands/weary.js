@@ -15,7 +15,6 @@ module.exports = {
 				attachment: './misc/stagger.mp3'
 			}]
 		})
-			.then(console.log)
 			.catch(console.error);
 		return
 	},
