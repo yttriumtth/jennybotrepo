@@ -12,8 +12,7 @@ module.exports = {
 		message.channel.send(imageEmbed);
 		message.channel.send({ 
 			files: [{
-				attachment: './misc/stagger.mp3',
-				name: 'stagger.mp3'
+				attachment: './misc/stagger.mp3'
 			}]
 		})
 			.then(console.log)
