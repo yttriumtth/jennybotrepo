@@ -1,4 +1,6 @@
--
+./misc/serenity.mp3
+./misc/emptyskies.mp3
 ./misc/stagger.mp3
 You seem tired; Come, rest here for a while.
-We're almost there; Let's rest for a bit. Okay?
+Don't let it all get you down; Let's rest for a bit. Okay?
+It's okay, you're safe here. Sit with me.
