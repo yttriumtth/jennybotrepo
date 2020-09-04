@@ -14,7 +14,7 @@ module.exports = {
 			}
 			linesGot = data.toString().split("\n");
 			var randSoInd = Math.floor(Math.random() * (linesGot.length / 2));
-			var randLiInd = linesGot.length - randImInd - 1;
+			var randLiInd = linesGot.length - randSoInd - 1;
 			const randLine = linesGot[randLiInd];
 			const imageEmbed = new Discord.RichEmbed()
 				.setColor('#ff0040')
