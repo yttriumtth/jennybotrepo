@@ -11,7 +11,7 @@ const roleplaycommandFiles = fs.readdirSync('./_roleplaycommands').filter(file =
 const greentextcommandFiles = fs.readdirSync('./_greentextcommands').filter(file => file.endsWith('.js'));
 
 var talkChanceCommon = 170; //normal 170
-var talkChanceRare = 1000; //normal 1000
+var talkChanceRare = 5000; //normal 1000
 var talkChanceEmoji = 60; //normal 60
 
 //commands setup
@@ -147,7 +147,7 @@ client.on('message', message => {
 	var randChance = Math.floor(Math.random() * Math.floor(talkChanceRare));
 	if (randChance == talkChanceRare-1) {
 		var msgStr = message.content.toUpperCase();
-		return message.channel.send('Oh fuck off with the `' + msgStr + '`');
+		return message.channel.send('Since when is `' + msgStr + '` true?');
 	} else {
 		var randChance = Math.floor(Math.random() * Math.floor(talkChanceCommon));
 		if (randChance == talkChanceCommon-1) {
