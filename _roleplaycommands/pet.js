@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'pet',
-	aliases: ['pets', 'pats', 'headpats'],
+	aliases: ['pets', 'pats', 'headpats', 'headpets', 'pat'],
 	execute(message, args) {
 		const imagelist = './imagelists/neversoft.txt'; //location of images
 		const framecolor = '#ff0040'; //personalized frame color
