@@ -37,7 +37,7 @@ client.once('ready', () => {
 client.on('message', message => {	
 	
 	//User filter - no bots or PMs, and must have required roles (Jennyfriend or Jennymaster)
-	if ((!message.member.roles.has('738728406052765696') && !message.member.roles.has('738728289233010708')) || message.author.bot || message.channel.type !== 'text') {
+	if ((!message.member.guild.roles.has('738728406052765696') && !message.member.guild.roles.has('738728289233010708')) || message.author.bot || message.channel.type !== 'text') {
 		return;
 	}
 	
