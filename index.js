@@ -140,6 +140,20 @@ client.on('message', message => {
 			if (commandName == 'showfreq') {
 				return message.channel.send('Common: ' + talkChanceCommon + ', Rare: ' + talkChanceRare + ', Emoji: ' + talkChanceEmoji + '.');
 			}
+			if (commandName == 'dump') {
+				const fileNam = './imagelists/' + args[0] + '.txt';
+				fs.readFile(fileNam, (err, data) => {
+					if (err) {
+						console.error(err)
+						return
+					}
+					linesGot = data.toString().split("\n");
+					for (i = 0;i < linesGot.length; i++) {
+						message.channel.send(linesGot[i]);
+					}
+					return;
+				})
+			}
 		}
 	}
 	
