@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'buddy',
-	aliases: ['bud', 'raine', 'rane', 'raina', 'sad', 'sads', 'thesad', 'thesads', 'thebiggestsads', 'thebiggestsad', 'cry', 'thecry', 'thebiggestcry'],
+	aliases: ['bud', 'raine', 'rane', 'bloved', 'raina', 'sad', 'sads', 'thesad', 'thesads', 'thebiggestsads', 'thebiggestsad', 'cry', 'thecry', 'thebiggestcry'],
 	execute(message, args) {
 		const imagelist = './imagelists/buddy.txt'; //location of images
 		const framecolor = '#0066ff'; //personalized frame color
