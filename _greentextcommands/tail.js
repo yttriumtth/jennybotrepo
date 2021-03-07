@@ -1,9 +1,9 @@
 module.exports = {
-	name: 'buddy',
-	aliases: ['bud', 'raine', 'rane', 'raina', 'sad', 'sads', 'thesad', 'thesads', 'thebiggestsads', 'thebiggestsad', 'cry', 'thecry', 'thebiggestcry'],
+	name: 'tail',
+	aliases: ['prof', 'proff'],
 	execute(message, args) {
-		const imagelist = './imagelists/buddy.txt'; //location of images
-		const framecolor = '#0066ff'; //personalized frame color
+		const imagelist = './imagelists/tail.txt'; //location of images
+		const framecolor = '#ff0040'; //personalized frame color
 		const fs = require('fs');
 		const Discord = require('discord.js');
 		fs.readFile(imagelist, (err, data) => {
