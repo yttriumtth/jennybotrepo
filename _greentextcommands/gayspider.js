@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'gayspider',
-	aliases: ['haram', 'syria'],
+	aliases: ['haram', 'haramspider', 'spider', 'hazbin', 'gay'],
 	execute(message, args) {
 		const imagelist = './imagelists/gayspider.txt'; //location of images
 		const fs = require('fs');
