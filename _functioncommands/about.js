@@ -13,7 +13,7 @@ module.exports = {
 		.setDescription('Open Source Discord shitpost bot. Visit https://github.com/yttriumtth/jennybotrepo and steal it there.')
 		.setThumbnail('https://cdn.discordapp.com/attachments/535406784085622793/745739489267155124/canvas2.png')
 		.addField('Functions (%)', 'about, haiku, help, ping, weary', true)
-		.addField('Macros (>)', 'aran, buddy, cozy, dab, dabmood, eckse, faf, furry, gayspider, gimme, id, jenny, kat, laugh, leoian, mandag, marry, neon, neversoft, starfyter, vivi, waismuth, wrong', true)
+		.addField('Macros (>)', 'aran, buddy, cozy, dab, dabmood, eckse, faf, furry, gayspider, gimme, motivate, id, jenny, kat, laugh, leoian, mandag, marry, neon, neversoft, starfyter, vivi, waismuth, wrong', true)
 		.addField('Roleplay (.)', 'pet, suicide', true)
 		.setFooter('If you know her whereabouts, there is a 500,000,000 Spaceshekel bounty. Contact your local space Starbucks for more details.');
 		return message.channel.send(helpEmbed);
