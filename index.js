@@ -161,7 +161,7 @@ client.on('message', message => {
 	var randChance = Math.floor(Math.random() * Math.floor(talkChanceRare));
 	if (randChance == talkChanceRare-1) {
 		var msgStr = message.content.toUpperCase();
-		var randestChance = Math.floor(Math.random() * 3));
+		var randestChance = Math.floor(Math.random() * 3);
 		switch (randestChance) {
 			case 0:
 				return message.channel.send('You should write a book! People need to know about the `' + msgStr);
