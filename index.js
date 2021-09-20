@@ -161,7 +161,21 @@ client.on('message', message => {
 	var randChance = Math.floor(Math.random() * Math.floor(talkChanceRare));
 	if (randChance == talkChanceRare-1) {
 		var msgStr = message.content.toUpperCase();
-		return message.channel.send('Since when is `' + msgStr + '` true?');
+		var randestChance = Math.floor(Math.random() * 3));
+		switch (randestChance) {
+			case 0:
+				return message.channel.send('You should write a book! People need to know about the `' + msgStr);
+				[break;]
+			case 1:
+				return message.channel.send('What? Jenny didnt know that `' + msgStr + '`!');
+				[break;]
+			case 2:
+				return message.channel.send('Dont give Jenny that `' + msgStr);
+				[break;]
+			default:
+				return message.channel.send('Since when is `' + msgStr + '` true?');
+				[break;]
+		}
 	} else {
 		var randChance = Math.floor(Math.random() * Math.floor(talkChanceCommon));
 		if (randChance == talkChanceCommon-1) {
