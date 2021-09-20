@@ -165,16 +165,16 @@ client.on('message', message => {
 		switch (randestChance) {
 			case 0:
 				return message.channel.send('You should write a book! People need to know about the `' + msgStr);
-				[break;]
+				break;
 			case 1:
 				return message.channel.send('What? Jenny didnt know that `' + msgStr + '`!');
-				[break;]
+				break;
 			case 2:
 				return message.channel.send('Dont give Jenny that `' + msgStr);
-				[break;]
+				break;
 			default:
 				return message.channel.send('Since when is `' + msgStr + '` true?');
-				[break;]
+				break;
 		}
 	} else {
 		var randChance = Math.floor(Math.random() * Math.floor(talkChanceCommon));
