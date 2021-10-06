@@ -208,6 +208,7 @@ client.on('message', message => {
 
 });
 
+
 //client stuff =>
 client.on('error', error => {
 	 console.error('The websocket connection encountered an error:', error);
