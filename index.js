@@ -12,7 +12,7 @@ const greentextcommandFiles = fs.readdirSync('./_greentextcommands').filter(file
 
 var talkChanceCommon = 170; //normal 170
 var talkChanceRare = 5000; //normal 1000
-var talkChanceEmoji = 60; //normal 60
+var talkChanceEmoji = 120; //normal 60
 
 //commands setup
 for (const file of functioncommandFiles) {
